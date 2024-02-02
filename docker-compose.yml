@@ -1,0 +1,15 @@
+version: '3'
+services:
+  spring-app:
+    build: .
+    image: database-springboot:latest
+    ports:
+      - "8080:8080"
+    links:
+      - redis
+    volumes:
+      - E:\Database-Spring-boot-Application-master\target:/app/target
+  redis:
+    image: redis
+    ports:
+      - "6379:6379" 
